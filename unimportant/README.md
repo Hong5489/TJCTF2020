@@ -1,5 +1,6 @@
 # Unimportant 60 points
 >Forensics - Solved (100 solves)
+
 >Written by KyleForkBomb
 
 >It's probably at least a *bit* important? Like maybe not the least significant, but still unimportant...
@@ -10,13 +11,13 @@
 
 A python script and a PNG picture
 
-Look though the script, it just put the flag in the **second bit of red channel** of the `unimportant.png`
+Look though the script, it just put the flag in the **second bit of green channel** of the `unimportant.png`
 
 ```py
-pixel = (pixel[0],                     Alpha
-         pixel[1]&~0b10|(bits[i]<<1),  Red
-         pixel[2],                     Green
-         pixel[3])                     Blue
+pixel = (pixel[0],                     Red
+         pixel[1]&~0b10|(bits[i]<<1),  Green
+         pixel[2],                     Blue
+         pixel[3])                     Alpha
 ```
 Wrote a [python script](solve.py) to extract the flag:
 ```py
